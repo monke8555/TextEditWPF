@@ -1,0 +1,42 @@
+﻿<Window x:Name="window" x:Class="TextEditWPF.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TextEditWPF"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        AllowsTransparency="True"
+        mc:Ignorable="d"
+        Title="TextEdit" Height="200" Width="300">
+    <Window.Resources>
+        <Storyboard x:Key="MakeSmaller">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="window">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.500" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="window">
+                <EasingDoubleKeyFrame KeyTime="0:0:1.500" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Grid x:Name="grid" Background="#FF043142" Width="300" Height="200">
+        <Button x:Name="Close" HorizontalAlignment="Left" VerticalAlignment="Top" Width="20" Margin="280,0,0,0" Background="Transparent" Height="20" Click="CloseW" BorderBrush="{x:Null}" BorderThickness="0">
+            <StackPanel>
+                <Image Source="pack://application:,,,/Resources/Close.png" />
+            </StackPanel>
+        </Button>
+        <Button x:Name="Minimize" HorizontalAlignment="Left" VerticalAlignment="Top" Width="20" Margin="260,0,0,0" Background="Transparent" Height="20" Click="MinimizeW" BorderBrush="{x:Null}" BorderThickness="0">
+            <StackPanel>
+                <Image Source="pack://application:,,,/Resources/Minimize.png" />
+            </StackPanel>
+        </Button>
+        <TextBlock FontSize="30" Foreground="White" Width="290" Margin="5,15,5,152" FontFamily="Lucida Sans Typewriter">
+                TextEdit
+        </TextBlock>
+        <TextBlock FontSize="20" Foreground="White" Width="290" FontFamily="Lucida Sans Typewriter">
+            <LineBreak/><LineBreak/><LineBreak/><LineBreak/><LineBreak/><LineBreak/><LineBreak/>
+            v1.0
+        </TextBlock>
+    </Grid>
+</Window>
